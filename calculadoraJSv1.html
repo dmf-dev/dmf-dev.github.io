@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora Básica em JS</title>
+    <style>
+        body{
+            font: normal 12pt Times;
+        }
+
+        .operação {
+            margin-top: 30px;
+
+        }      
+
+        .button{
+            margin-top: 50px;
+            margin-inline-end: 30px;
+        }
+
+        input {
+            font: normal 12pt Times;
+            width: 70px;
+            margin-inline: 10px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Calculadora Básica em JavaScript</h1>
+    <p>Escolha abaixo a operação que deseja fazer, preenchendo os campos da linha correspondente. Após, aperte no botão "calcular" para obter o resultado ou "limpar" para recomeçar.</p>
+    
+    <!--Soma-->
+    <div id = "soma" class = "operação">
+        <input type="number" id="soma1"> + 
+        <input type="number" id="soma2"> =
+        <output id="resultadoSoma">soma</output>
+    </div>
+
+    <!--Subtração-->
+    <div id = "subtração" class = "operação">
+        <input type="number" id="sub1"> - 
+        <input type="number" id="sub2"> =
+        <output id="resultadoSubtração">subtração</output>
+    </div>
+
+    <!--Multiplicação-->
+    <div id = "multiplicação" class = "operação">
+        <input type="number" id="fator1"> x 
+        <input type="number" id="fator2"> =
+        <output id="resultadoMultiplicação">produto</output>
+    </div>
+
+    <!--Divisão-->
+    <div id = "divisão" class = "operação">
+        <input type="number" id="dividendo"> / 
+        <input type="number" id="divisor"> =
+        <output id="resultadoDivisão">quociente</output>
+    </div>
+
+    <!--Todos os botões-->
+    <div class = "buttons">
+
+        <input type="button" id="botãoCalcular" value="Calcular" class="button" onclick="calcular()">
+
+        <input type="button" id="botãoLimpar" value="Limpar" class="button" onclick="limpar()">
+    </div>
+
+    <script>
+        
+        function calcular() {
+          
+            // Subfunção soma
+            var soma, s1, s2, auxSoma;
+            s1 = window.document.getElementById('soma1');
+            s2 = window.document.getElementById('soma2');
+            soma = Number(s1.value) + Number(s2.value);
+            auxSoma = window.document.getElementById('resultadoSoma');
+            auxSoma.innerText=soma;
+
+            // Subfunção subtração
+            var subtração, sub1, sub2, auxSub;
+            sub1 = window.document.getElementById('sub1');
+            sub2 = window.document.getElementById('sub2');
+            subtração = Number(sub1.value) - Number(sub2.value);
+            auxSub = window.document.getElementById('resultadoSubtração');
+            auxSub.innerText=subtração;
+            
+            // Subfunção multiplicação
+            var multiplicação, fator1, fator2, auxMulti;
+            fator1 = window.document.getElementById('fator1');
+            fator2 = window.document.getElementById('fator2');
+            produto = Number(fator1.value) * Number(fator2.value);
+            auxMulti = window.document.getElementById('resultadoMultiplicação');
+            auxMulti.innerText=produto;
+
+            // Subfunção divisão
+            var divisão, dividendo, divisor, auxDiv;
+            dividendo = window.document.getElementById('dividendo');
+            divisor = window.document.getElementById('divisor');
+            quociente = Number(dividendo.value) / Number(divisor.value);
+            auxDiv = window.document.getElementById('resultadoDivisão');
+            auxDiv.innerText=quociente;
+
+        }
+
+        // Função limpar
+        function limpar() {
+            window.location.reload();
+
+        }
+
+
+
+
+            
+            
+
+
+
+        
+    </script>
+    
+    
+</body>
+</html>
